@@ -1,0 +1,18 @@
+.affair {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 20px 10px 0;
+  color: rgb(0, 41, 128);
+}
+
+.affair:hover::after {
+  position: absolute;
+  content: "";
+  top: 25px;
+  right: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
+  transition: 0.3s ease-in-out;
+}
