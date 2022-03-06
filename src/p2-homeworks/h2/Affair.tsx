@@ -9,7 +9,7 @@ type AffairPropsType = {
 };
 
 const Affair: React.FC<AffairPropsType> = (props) => {
-  const deleteCallback = (_id: number) => {
+  const deleteCallback = () => {
     props.deleteAffairCallback(props.affair._id);
   };
 
