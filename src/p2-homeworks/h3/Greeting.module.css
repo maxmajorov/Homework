@@ -1,7 +1,37 @@
-.someClass {
-
+.valid {
+  margin-right: 20px;
+  border: 2px solid green;
+  box-shadow: 0 0 5px 1px green;
 }
 
 .error {
-    border: 1px solid red;
+  margin-right: 20px;
+  background-color: rgb(255, 172, 172);
+  border: 2px dotted red;
+  box-shadow: 0 0 5px 1px red;
+}
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #74c5ff;
+  background-color: #ddf0ff;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+
+.textError {
+  font-size: 12px;
+  color: red;
 }
