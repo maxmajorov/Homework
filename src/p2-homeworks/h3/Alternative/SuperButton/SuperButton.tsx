@@ -8,12 +8,14 @@ type DefaultButtonPropsType = DetailedHTMLProps<
 >;
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
+  addUser: () => void;
   disabled?: boolean;
   red?: boolean;
 };
 
 const SuperButton: React.FC<SuperButtonPropsType> = ({
   red,
+  addUser,
   disabled,
   className,
   ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
@@ -22,6 +24,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = ({
 
   return (
     <button
+      onClick={addUser}
       className={finalClassName}
       {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
     />

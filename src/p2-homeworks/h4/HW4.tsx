@@ -10,7 +10,7 @@ function HW4() {
 
   const showAlert = () => {
     if (error) {
-      alert("введите текст...");
+      alert("Please, enter the text");
     } else {
       alert(text); // если нет ошибки показать текст
     }
@@ -35,7 +35,6 @@ function HW4() {
         <SuperInputText
           className={s.blue} // проверьте, рабоет ли смешивание классов
         /> */}
-
         {/*----------------------------------------------------*/}
         <div className={s.buttons}>
           <SuperButton>default</SuperButton>
@@ -49,15 +48,14 @@ function HW4() {
 
           <SuperButton disabled>disabled</SuperButton>
         </div>
-
         {/*----------------------------------------------------*/}
-
         <SuperCheckbox checked={checked} onChangeChecked={setChecked}>
-          some text {/*// этот текст попадёт в children*/}
+          Checkbox 1 {/*// этот текст попадёт в children*/}
         </SuperCheckbox>
-
         {/*// onChange тоже должен работать*/}
-        <SuperCheckbox checked={checked} onChange={testOnChange} />
+        <SuperCheckbox checked={checked} onChange={testOnChange}>
+          Checkbox 2
+        </SuperCheckbox>
       </div>
       <hr />
       {/*для личного творчества, могу проверить*/}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v1 } from "uuid";
+import AlternativeGreeting from "./Alternative/AlternativeGreeting";
 import GreetingContainer from "./GreetingContainer";
 
 // types
@@ -18,6 +19,8 @@ function HW3() {
     setUsers([{ _id: v1(), name: name }, ...users]);
   };
 
+  console.log(users);
+
   return (
     <div>
       <hr />
@@ -25,7 +28,7 @@ function HW3() {
       <GreetingContainer users={users} addUserCallback={addUserCallback} />
       <hr />
       {/*для личного творчества, могу проверить*/}
-      {/*<AlternativeGreeting/>*/}
+      <AlternativeGreeting users={users} addUserCallback={addUserCallback} />
       <hr />
     </div>
   );

@@ -19,8 +19,5 @@
 .buttons {
   display: flex;
   justify-content: space-between;
-  padding: 30px 100px 30px 100px;
-}
-.buttons:not(:last-child) {
-  margin-right: 10px;
+  padding: 30px 0;
 }
