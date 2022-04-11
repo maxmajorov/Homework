@@ -1,6 +1,7 @@
 import React, {
   ChangeEvent,
   DetailedHTMLProps,
+  FocusEvent,
   InputHTMLAttributes,
   KeyboardEvent,
 } from "react";
@@ -26,6 +27,7 @@ type SuperInputPropsType = DefaultInputPropsType & {
 export const SuperInput: React.FC<SuperInputPropsType> = ({
   type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
   onChange,
+  onBlur,
   onChangeText,
   onKeyPress,
   onEnter,
@@ -50,6 +52,10 @@ export const SuperInput: React.FC<SuperInputPropsType> = ({
       onEnter(); // то вызвать его
   };
 
+  // const disactivateEditMode = (event: FocusEvent<HTMLInputElement>) => {
+  //   setEditMode(false);
+  // };
+
   const finalSpanClassName = `${s.error} ${error ? s.errorMessage : ""}`;
   const finalInputClassName = `${s.input} ${s.input_invalid} ${
     error ? s.input_invalid : s.input_valid
@@ -59,84 +65,14 @@ export const SuperInput: React.FC<SuperInputPropsType> = ({
     <>
       <Input
         type={"text"}
+        onBlur={onBlur}
         onChange={onChangeCallback}
         onKeyPress={onKeyPressCallback}
         className={finalInputClassName}
         placeholder="Write something here..."
-        {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+        // {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
       />
       {error && <span className={finalSpanClassName}>{error}</span>}
     </>
   );
 };
-
-// import React from "react";
-// import TextField from "@material-ui/core/TextField";
-// import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       "& .MuiTextField-root": {
-//         margin: theme.spacing(1),
-//         width: "25ch",
-//       },
-//     },
-//   })
-// );
-
-// export default function StateTextFields() {
-//   const classes = useStyles();
-//   const [name, setName] = React.useState("Cat in the Hat");
-//   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     setName(event.target.value);
-//   };
-
-//   return (
-//     <form className={classes.root} noValidate autoComplete="off">
-//       <div>
-//         <TextField
-//           id="standard-name"
-//           label="Name"
-//           value={name}
-//           onChange={handleChange}
-//         />
-//         <TextField
-//           id="standard-uncontrolled"
-//           label="Uncontrolled"
-//           defaultValue="foo"
-//         />
-//       </div>
-//       <div>
-//         <TextField
-//           id="filled-name"
-//           label="Name"
-//           value={name}
-//           onChange={handleChange}
-//           variant="filled"
-//         />
-//         <TextField
-//           id="filled-uncontrolled"
-//           label="Uncontrolled"
-//           defaultValue="foo"
-//           variant="filled"
-//         />
-//       </div>
-//       <div>
-//         <TextField
-//           id="outlined-name"
-//           label="Name"
-//           value={name}
-//           onChange={handleChange}
-//           variant="outlined"
-//         />
-//         <TextField
-//           id="outlined-uncontrolled"
-//           label="Uncontrolled"
-//           defaultValue="foo"
-//           variant="outlined"
-//         />
-//       </div>
-//     </form>
-//   );
-// }
