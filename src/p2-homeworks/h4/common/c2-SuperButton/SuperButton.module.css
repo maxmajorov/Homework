@@ -58,7 +58,7 @@
   opacity: 1;
 }
 
-.button::after {
+/* .button::after {
   content: "";
   width: 30px;
   height: 30px;
@@ -70,7 +70,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   animation: ring 1.5s infinite;
-}
+} */
 
 .button:hover::after,
 .button:focus::after {
