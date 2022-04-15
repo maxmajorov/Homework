@@ -7,10 +7,8 @@ const HW5 = () => {
   return (
     <div>
       {/*в gh-pages лучше работает HashRouter*/}
-      <HashRouter>
-        <Header />
-        <RoutesPages />
-      </HashRouter>
+      <Header />
+      <RoutesPages />
     </div>
   );
 };
