@@ -55,4 +55,5 @@ test("check age 18", () => {
   expect(newState.length).toBe(4);
   expect(newState[0].name).toBe("Александр");
   expect(newState[0].age).toBe(66);
+  expect(newState[1].age).toBe(55);
 });
