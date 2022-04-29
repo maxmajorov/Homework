@@ -49,9 +49,15 @@ function HW8() {
         onChange={(e) => setSortAge(+e.currentTarget.value)}
       />
       <div className={classes.btns}>
-        <SuperButton onClick={sortUp}>sort up</SuperButton>
-        <SuperButton onClick={sortDown}>sort down</SuperButton>
-        <SuperButton onClick={checkAge}>check 18</SuperButton>
+        <SuperButton onClick={sortUp} color="primary">
+          sort up
+        </SuperButton>
+        <SuperButton onClick={sortDown} color="secondary">
+          sort down
+        </SuperButton>
+        <SuperButton onClick={checkAge} color="primary">
+          check 18
+        </SuperButton>
       </div>
       <hr />
       {/*для личного творчества, могу проверить*/}

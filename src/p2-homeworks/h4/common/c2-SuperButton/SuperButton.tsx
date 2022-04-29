@@ -1,3 +1,4 @@
+import Button from "@material-ui/core/Button";
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import s from "./SuperButton.module.css";
 
@@ -10,21 +11,29 @@ type DefaultButtonPropsType = DetailedHTMLProps<
 type SuperButtonPropsType = DefaultButtonPropsType & {
   disabled?: boolean;
   red?: boolean;
+  color?: string;
 };
 
 const SuperButton: React.FC<SuperButtonPropsType> = ({
   red,
+  color,
   disabled,
   className,
   ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
 }) => {
-  const finalClassName = `${disabled ? s.disabled : s.default} ${s.button}`;
+  const finalClassName = `${disabled ? s.disabled : s.default} `;
 
+  // ${s.button}
   return (
-    <button
+    <Button
+      variant="contained"
+      color={color === "primary" ? "primary" : "secondary"}
       className={finalClassName}
-      {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
-    />
+      onClick={restProps.onClick}
+      // {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
+    >
+      {restProps.children}
+    </Button>
   );
 };
 
