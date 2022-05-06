@@ -13,7 +13,6 @@ import React, {
   DetailedHTMLProps,
   ChangeEvent,
 } from "react";
-// import classes from "./SuperSelect.module.css";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,7 +54,7 @@ export const SuperSelect: React.FC<SuperSelectPropsType> = ({
       ))
     : [""]; // map options with key
 
-  const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
+  const onChangeHandler = (event: ChangeEvent<any>) => {
     onChange && onChange(event);
     onChangeOption && onChangeOption(event.target.value);
   };
