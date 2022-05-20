@@ -1,7 +1,6 @@
 import React, {
   ChangeEvent,
   DetailedHTMLProps,
-  FocusEvent,
   InputHTMLAttributes,
   KeyboardEvent,
 } from "react";
