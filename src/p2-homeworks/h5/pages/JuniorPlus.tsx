@@ -1,7 +1,13 @@
 import React from "react";
+import { HW13 } from "../../h13/HW13";
 
 const JuniorPlus = () => {
-  return <div>HW 12 -</div>;
+  return (
+    <div>
+      HW 13 -
+      <HW13 />
+    </div>
+  );
 };
 
 export default JuniorPlus;
